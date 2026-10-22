@@ -14,7 +14,7 @@ import java.util.*;
 
 public class MainActivity extends Activity {
     final int burgundy=Color.rgb(107,31,42), cream=Color.rgb(255,248,245), gold=Color.rgb(242,184,75);
-    LinearLayout root, bar; FrameLayout content; String section="home"; int selected=1; Set<Integer> favorites=new HashSet<>();
+    LinearLayout root, bar; FrameLayout content; String section="home"; int selected=1; Set<String> favorites=new HashSet<>();
     @Override public void onCreate(Bundle b){super.onCreate(b); getWindow().setStatusBarColor(burgundy); getWindow().setNavigationBarColor(burgundy); favorites=new HashSet<>(getPreferences(0).getStringSet("favorites",new HashSet<>())); showHome();}
     GradientDrawable bg(int color,int radius){GradientDrawable d=new GradientDrawable();d.setColor(color);d.setCornerRadius(radius);return d;}
     TextView text(String s,int size,int color){TextView t=new TextView(this);t.setText(s);t.setTextSize(size);t.setTextColor(color);t.setGravity(Gravity.CENTER);return t;}
